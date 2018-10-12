@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on a local 
 Step 1: git clone [awards](https://github.com/koyoo-maxwel/awards.git)
 Step 2: Enter the Project root folder
 
-cd koyooinstagram/
+cd awards/
 install virtual environment (venv) without pip
 
 python3.6 -m venv --without-pip virtual
