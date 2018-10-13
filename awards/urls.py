@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$',views.home,name='home'),
-    # url(r'^profile/',views.profile, name='profile'),
+    url(r'^profile/',views.profile, name='profile'),
     # url(r'^edit/',views.edit,name='edit'),
     # url(r'^upload_image/',views.upload,name='upload'),
     # url(r'^search/',views.search_results,name='search'),

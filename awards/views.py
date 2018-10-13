@@ -7,7 +7,7 @@ from .forms import EditProfileForm,UploadForm,CommentForm
 
 # Create your views here.
 
-#@login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def home(request):
     current_user = request.user
     profile = Profile.get_profile()
@@ -17,3 +17,23 @@ def home(request):
                                         "comments":comments,
                                         "current_user":current_user,
                                         "project":project,})
+
+
+
+
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    
+    current_user = request.user
+    profile_pic = Profile.get_profile()
+    
+    comments = Comment.get_comment()
+
+    data = {
+        "comments":comments,
+        "profile_pic":profile_pic,
+        "user":current_user,
+        "profile":profile,
+    }
+    
+    return render(request,'profile/profile.html',data)

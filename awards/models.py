@@ -36,8 +36,7 @@ class Profile(models.Model):
 
 # my images for the projects uploads here
 class Project(models.Model):
-    image = models.ImageField(
-        upload_to='project-uploads/', blank=True, null=True)
+    image = models.ImageField(upload_to='project-uploads/', blank=True, null=True)
     upload_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null='True')
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
@@ -70,7 +69,7 @@ class Comment(models.Model):
     comments = models.CharField(max_length=500, blank=True, null=True)
     commented_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User)
-    image = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.comments
