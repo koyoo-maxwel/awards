@@ -1,28 +1,42 @@
-
 {% load bootstrap4 %} {% load static %}
 {% if user.is_authenticated %}
 <header>
     <h1>Welcome to the Awards</h1>
 </header>
 <nav class="sticky">
-    <ul>
-        <li><a href="">Profile</a></li>
-        <a href="#"><i style="color:blue;" class="fa fa-user fa-2x"></i></a>
-        <a href="#"><i style="color:blue;" class="material-icons-2x"></i></a>
-        <!-- <a href="#"><i style="color:blue;" class="fa fa-settings fa-2x"></i></a> -->
 
 
-        <a href="#"><i style="color:blue;" class="fa fa-settings fa-2x"></i></a>
-        <a href="#"><i style="color:blue;" class="fa fa-align-justify fa-2x"></i></a>
-    </ul>
+
+    <section class="icons-section">
+        <ul>
+            <a href="{% url 'home' %}"><i style="color:blue;" class="fa fa-home fa-2x"></i></a>
+            <a href="{% url 'profile' %}"><i style="color:blue;" class="fa fa-user fa-2x"></i></a>
+            <a href="#"><i style="color:blue;" class="material-icons-2x"></i></a>
+            <!-- <a href="#"><i style="color:blue;" class="fa fa-settings fa-2x"></i></a> -->
+            <a href="{% url 'edit' %}"><i style="color:blue;" class="fa fa-cog fa-spin fa-3x fa-fw"></i></a>
+            <span class="sr-only">Loading...</span>
+
+
+            <a href="{% url 'upload' %}"><i style="color:blue;" class="fa fa-upload fa-2x"></i></a>
+
+            <a href="#"><i style="color:blue;" class="fa fa-align-justify fa-2x"></i></a>
+            <a href="/logout"><i style="color:blue;" class="fa fa-sign-out-alt fa-2x"></i></a>
+
+
+            <form role="search" action="{% url 'search' %}">
+                <input class="input-search" type="text" name="username" placeholder="Search name" />
+                <button class="btn btn-outline-success my-2 my-sm-0" role="search" type="submit">Search
+                </button>
+            </form>
+
+
+
+        </ul>
+
+    </section>
 </nav>
 <main>
     <img src="/static/landing/header.jpeg" alt="" style="width:100%; height: 50%;">
 </main>
-
-
-
-
 {% endif %}
-
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>

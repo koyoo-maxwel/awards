@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile , Project , Comment
+from .models import Profile , Project, Review
 
 class EditProfileForm(forms.ModelForm):
     class Meta:
@@ -11,7 +11,7 @@ class UploadForm(forms.ModelForm):
         model = Project
         exclude = ['user','likes','upload_date','profile']
 
-class CommentForm(forms.ModelForm):
+class ReviewForm(forms.ModelForm):
     class Meta:
-        model = Comment
+        model = Review
         exclude = ['user','comment_date','image',]

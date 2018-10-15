@@ -30,12 +30,12 @@ main{
 
 nav{
   opacity: 1;
-  transition: opacity 0.3s linear;
+  transition: opacity 0.5s linear;
 }
 
 nav ul{
     margin: 0;
-    padding: 15px;
+    padding: 10px;
     background-color: rgba(20, 20, 20, 1);
 }
 
@@ -58,7 +58,7 @@ nav ul li + li{
     position: fixed;
     top: 0;
     left: 0;
-	  z-index: 15;
+	  z-index: 10;
     margin-top: 0;
     width: 100%;
     opacity: 0.8;
@@ -67,3 +67,4 @@ nav ul li + li{
 .sticky.is-fixed ul li{
    padding: 0; 
 }
+

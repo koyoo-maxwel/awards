@@ -1,10 +1,12 @@
-{% bootstrap3 %} {% bootstrap4 %}{% load static %}
+{% bootstrap3 %} {% bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% if title %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    {% if title %}
     <link rel="shortcut icon" href="/static/img/instagram.jpg">
     <!-- <link rel="shortcut icon" href="/static/img/instagram.jpg"> -->
 
@@ -14,15 +16,22 @@
     <link rel="icon" type="image/png" href="/static/img/instagram.png">
     <!-- <link rel="icon" type="image/png" href="/static/img/instagram.png"> -->
 
-    <title>Instagram</title>
-    {% endif %} {% block styles %} {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"> {% endblock %}
+    <title>Awards</title>
+    {% endif %}
+     {% block styles %} 
+     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+    {% endblock %}
   </head>
 
   <body>
-    {% block content %} {% endblock %} {% block scripts %}
+    {% block content %}
+
+    {% endblock %}
+    {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {% bootstrap_javascript %} {% endblock %}
+    {% bootstrap_javascript %} 
+    {% endblock %}
   </body>
 
 </html>

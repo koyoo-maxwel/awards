@@ -1,6 +1,24 @@
 {% extends 'base.html' %}  {% load bootstrap4 %}
  {% load static %}
 <link rel="stylesheet" href="{% static 'css/reg.css' %}"> {% block content %} {{block.super}}
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+   <div class="card mt-5" style="width: 18rem;">
+     <img class="card-img-top" src="/media/profile/82d1a53cf077238573eab6db857b2a28.jpg" alt="Card image cap">   
+       
+     </div>
+   </div>
+   </div>
+  </div>
+  
+  
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-4"></div>
@@ -17,10 +35,10 @@
             {% csrf_token %} {% bootstrap_form form %}
 
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input type="submit" class="btn btn-info btn-sm" value="Login">
             </div>
             <input type="hidden" name="next" value="{% url 'home' %}">
-            <p>Don't have an account? <a href="/accounts/register/" class="btn btn-default">Sign Up Here</a></p>
+            <p>Don't have an account? <a href="/accounts/register/" class="btn btn-successs">Sign Up Here</a></p>
           </form>
         </div>
       </div>

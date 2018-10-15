@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %} {{block.super}}
+<div class="container mt-5">
+  <div class="row mt-5">
+    {% if searched %}
+    <h2>{{ searched | length}} user found</h2>
+    {% else %}
+    <h2>Found 0 users for the searched name {{message | title}}</h2>
+    {% endif %}
+  </div>
+  <div class="container">
+    <div class="row">
+      {% if searched %}
+      {% for user in searched %}
+      <div class="col-md-4">
+
+        {{ user.username }}
+        {% if user %}
+        <img src="{{user.profile_pic.url}}" alt="" class="img-fluid" style="width: 300px;height: 400px;">
+        {% endif %}
+        <h3 class="mt-5"> </h3>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
