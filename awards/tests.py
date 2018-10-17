@@ -1,6 +1,61 @@
+# from django.test import TestCase
+
+# # Create your tests here.
+
+
+
+
+
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.test import TestCase
 
 # Create your tests here.
+from django.test import TestCase
+
+# Create your tests here.
+from .models import  Project, Review, User, Profile
+from django.core.files.uploadedfile import SimpleUploadedFile
+
+class Review(TestCase):
+
+    def setUp(self):
+
+        self.koyoo = User.objects.create(username="koyoo")
+        self.picture = Image.objects.create(image='image',
+                                            user=self.koyoo)
+        self.comment = Review.objects.create(comment = 'cool-photo')
+
+        self.test_review = Review.objects.create(user=self.koyoo,
+                                                 image=self.picture,
+                                                 comment='cool-photo')
+        self.test_review.save()
+
+    def test_instance(self):
+
+        self.assertTrue(isinstance(self.test_reviews, Review))
+
+    #Testing Save method
+
+    def test_save_method(self):
+        reviews = Review.objects.all()
+        self.assertTrue(len(reviews)>0)
+
+    def test_save_review(self):
+        self.assertEqual(len(Review.objects.all()), 1)
+
+    # Tear down method
+    def tearDown(self):
+        Review.objects.all().delete()
+
+        # Testing delete method
+
+    def test_delete_review(self):
+        self.test_review.delete()
+        self.assertEqual(len(Review.objects.all()), 0)
+
+
 class ProfileTestClass(TestCase):
     #setup method
     def setUp(self):

@@ -13,7 +13,7 @@ from django.db.models.signals import post_save
 
 
 class Project(models.Model):
-    title = models.TextField(max_length=200, null=True,
+    title = models.TextField(max_length=100, null=True,
                              blank=True, default="title")
     project_image = models.ImageField(
         upload_to='project_upload/', null=True, blank=True)
@@ -39,8 +39,14 @@ class Project(models.Model):
 
     @classmethod
     def get_project_by_id(cls, id):
-        project = Project.objects.filter(id=Project.id)
+        project = Project.objects.filter(id=project.id)
         return project()
+
+    # @classmethod
+    # def get_project_by_id(cls,id):
+    #     project = cls.objects.get(pk=id)
+    #     return project
+    #     return project()
 
     def __str__(self):
         return self.title
@@ -62,10 +68,9 @@ class Review(models.Model):
     )
     project = models.ForeignKey(
         Project, null=True, blank=True, on_delete=models.CASCADE, related_name="reviews")
-    user = models.ForeignKey(User, null=True, blank=True,
-                             on_delete=models.CASCADE, related_name='reviews')
-    project_image = models.ImageField(
-        upload_to='project_upload/', null=True, blank=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='reviews')
+   
     comment = models.TextField()
     design_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
     usability_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
@@ -90,12 +95,9 @@ class Profile(models.Model):
                            blank=True, default="bio")
     profile_pic = models.ImageField(
         upload_to='picture/', null=True, blank=True, default=0)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    project = models.ForeignKey(Project, null=True)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name='profile', null=True)
     contact = models.IntegerField(default=0)
-
-    def __str__(self):
-        return self.user.username
 
     def save_profile(self):
         self.save()
@@ -105,7 +107,7 @@ class Profile(models.Model):
 
     @classmethod
     def get_profile(cls, user):
-        profile = Profile.objects.get(user = user)
+        profile = Profile.objects.get(user=user)
         return profile
 
     @classmethod
@@ -126,3 +128,6 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
+
+    def __str__(self):
+        return self.user.username

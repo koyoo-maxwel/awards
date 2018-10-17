@@ -14,9 +14,9 @@
       {% for user in searched %}
       <div class="col-md-4">
 
-        {{ user.username }}
+        <p>{{ user.username }}</p>
         {% if user %}
-        <img src="{{user.profile_pic.url}}" alt="" class="img-fluid" style="width: 300px;height: 400px;">
+        <img src="{{request.user.profile.profile_pic.url}}" alt="" class="img-fluid" style="width: 300px;height: 400px;">
         {% endif %}
         <h3 class="mt-5"> </h3>
         {% endfor %}

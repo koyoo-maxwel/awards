@@ -1,70 +1,68 @@
-*, *:after, *:before{
+*,
+*:after,
+*:before {
     margin: 0;
     padding: 0;
 }
 
-html, body{
-    font-family: 'Helvetica Neue', Arial, Verdana, sans-serif;   
+html,
+body {
+    font-family: 'Helvetica Neue', Arial, Verdana, sans-serif;
     font-size: 16px;
     line-height: 142%;
     height: 100%;
 }
 
-h1{
+h1 {
     color: white;
     text-align: center;
     margin-top: 20px;
 }
 
-header{
+header {
     height: 150px;
     padding: 15px;
     background-color: chocolate;
 }
 
-main{
-    padding: 15px;
-    /* background-color: cornflowerblue; */
-    height: 200vh;   
+
+
+nav {
+    opacity: 1;
+    transition: opacity 0.5s linear;
 }
 
-nav{
-  opacity: 1;
-  transition: opacity 0.5s linear;
-}
-
-nav ul{
+nav ul {
     margin: 0;
     padding: 10px;
     background-color: rgba(20, 20, 20, 1);
 }
 
-nav ul li{
+nav ul li {
     padding: 10px 0;
     display: inline-block;
     transition: padding 0.3s linear;
 }
 
-nav ul li a{
+nav ul li a {
     color: white;
     text-decoration: none;
 }
 
-nav ul li + li{
+nav ul li+li {
     margin-left: 25px;
 }
 
-.sticky.is-fixed{
+.sticky.is-fixed {
     position: fixed;
     top: 0;
     left: 0;
-	  z-index: 10;
+    z-index: 10;
     margin-top: 0;
     width: 100%;
     opacity: 0.8;
 }
 
-.sticky.is-fixed ul li{
-   padding: 0; 
+.sticky.is-fixed ul li {
+    padding: 0;
 }
-

@@ -10,13 +10,18 @@
         <div class="col-md-4">
 
 
-            <div class="card-header">
-                {{ profile.user.username }}
+            <div class="card">
+                <p style="text-align:center;font-size: 2em;">{{ user.username }}</p>
 
             </div>
             <hr>
             <div class="card-body">
-                <img src="{{profile.profile_pic.url}}" alt="img-fluid" style="width:50%; height:auto">
+                <img src="{{profile.profile_pic.url}}" alt="img-fluid" style="width:70%; height:auto">
+            </div>
+            <div class="card-footer">
+                <p> {{ request.user.profile.bio }}</p>
+                <div class="col-md-4"></div>
+                <p>{{ request.user.profile.contact }}</p>
             </div>
 
         </div>
