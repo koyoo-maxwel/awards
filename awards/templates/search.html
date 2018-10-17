@@ -17,6 +17,13 @@
         <p>{{ user.username }}</p>
         {% if user %}
         <img src="{{request.user.profile.profile_pic.url}}" alt="" class="img-fluid" style="width: 300px;height: 400px;">
+        <div class="info">
+
+          <p>{{ request.user.profile.contact }}</p>
+          <br>
+          <p>{{ request.user.profile.email }}</p>
+
+        </div>
         {% endif %}
         <h3 class="mt-5"> </h3>
         {% endfor %}

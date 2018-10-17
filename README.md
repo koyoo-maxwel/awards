@@ -1,6 +1,8 @@
 # Awards
 
-A clone of the website for the popular photo app Instagram 
+<img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
+
+A clone of the website for the popular photo app Instagram
 
 ## Getting Started
 
