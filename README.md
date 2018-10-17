@@ -1,6 +1,6 @@
 # Awards
 
-<img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
+<img src="/static/pics/Screenshot from 2018-10-17 19-40-18.png">
 
 - awards rating site
 
