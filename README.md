@@ -1,6 +1,8 @@
 # Awards
 
-<a href="https://rateawards.herokuapp.com/"></a><img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
+<a href="https://rateawards.herokuapp.com/"></a>
+
+<img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
 
 - awards rating site
 
