@@ -1,7 +1,6 @@
 # Awards
 
-[(https://raw.githubusercontent.com/koyoo-maxwel/awards/master/static/pics/screenshot from 2018-10-17 19-01-48.png)](https://rateawards.herokuapp.com/)
-<!-- <a href="https://rateawards.herokuapp.com/"><img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png"></a> -->
+<a href="https://rateawards.herokuapp.com/"></a><img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
 
 - awards rating site
 
