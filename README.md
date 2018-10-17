@@ -9,8 +9,8 @@
 
 These instructions will get you a copy of the project up and running on a local host.
 
-Step 1: git clone [awards](https://github.com/koyoo-maxwel/awards.git)
-Step 2: Enter the Project root folder
+- Step 1: git clone [awards](https://github.com/koyoo-maxwel/awards.git)
+- Step 2: Enter the Project root folder
 
 cd awards/
 install virtual environment (venv) without pip
