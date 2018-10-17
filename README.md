@@ -1,6 +1,5 @@
-# Awards
 
-<a href="https://rateawards.herokuapp.com/"></a>
+<a href="https://rateawards.herokuapp.com/">Awards</a>
 
 <img src="/static/pics/Screenshot from 2018-10-17 19-01-48.png">
 
