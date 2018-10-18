@@ -13,7 +13,7 @@
                 <h4>{{p.title}}</h4>
             </legend>
 
-
+            
             <div class="hovereffect">
 
                 <img src="{{ p.project_image.url }}" class="img-fluid" alt="photo">
@@ -25,14 +25,16 @@
                     <hr>
                     <div class="container-footer">
                         <p> uploaded on {{p.upload_date}}</p>
-                    </div>
+                    </div><br>
+                    <p><a href="{{p.project_url}}">{{p.project_url}}</a></p>
+                  
                     <hr>
                 </div>
             </div>
         </div>
         {% endfor%}
         {% endif %}
-
+      
     </div>
 </div>
 {% endblock %}

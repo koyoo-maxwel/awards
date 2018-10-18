@@ -1,12 +1,55 @@
-{% extends 'base.html' %} {% load bootstrap4 %} 
+{% extends 'base.html' %} {% load bootstrap4 %}
 {% block content %}
 
 {{block.super}}
 
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body class="hm-gradient">
+
+    <main>
+
+        <!--MDB Cards-->
+        <div class="container mt-4">
+
+           
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-12 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img (133).jpg" class="img-fluid"
+                                alt="photo">
+                            <a href="#!">
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Life in Brazil</h4>
+                            <!--Text-->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur sunt elit. Impedit iste
+                                perspiciatis earum voluptatem ad possimus itaque, eum aspernatur, nostrum dignissimos
+                                beatae id in illum accusantium adipisicing suscipit sunt doloremque.</p>
+                            <a href="#" class="btn btn-deep-orange btn-md">Read more</a>
+                        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+
+    </main>
+
+</body>
 
 
-
-{% endblock%} 
-
-
+{% endblock%}

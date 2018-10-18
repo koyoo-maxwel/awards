@@ -18,10 +18,12 @@
             </form>
         </div>
         <div class="col-md-6">
+
             {% if review%}
             {{review.count}}
             {% endif %}
             <div class="col-md-12">
+                {% for r in review%}
                 {% if project %}
 
                 <div class="hovereffect">
@@ -30,24 +32,20 @@
                     </legend>
                     <div class="card">
                         <img src="{{ project.project_image.url  }}" style="width:100%;">
-                        <p> there's a problem displaying the image </p>
-                        <div class="div-footer">
-                            <p> userbility rating {% if review.usability_rating %} {{review.usability_rating}}
-                            {% else%} __
-                            {% endif %}</p>
-                            <p></p>
-                            <p>Design Rating:
-                                {% if review.content_rating %}
-                                {{review.design_rating}} {% else %} __
-                                {% endif %}
-                            </p>
-                            <p></p>
 
+                        <div class="div-footer">
+                            USABILITY :{{ r.usability_rating }} <br>
+                            DESIGN :{{ r.design_rating }} <br>
+                            CONTENT :{{ r.content_rating }} <br>
                         </div>
 
                     </div>
+                    <legend>
+                        
+                    </legend>
                 </div>
                 {% endif %}
+                {% endfor%}
 
             </div>
         </div>

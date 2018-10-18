@@ -1,11 +1,12 @@
 from django import forms
-from .models import Profile, Project, Review
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Profile, Project, Review
 
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField(max_length=200, help_text='Required')
+
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
@@ -36,4 +37,4 @@ class UploadForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        exclude = ['user', 'comment_date', 'image']
+        exclude = ['user', 'project','date']

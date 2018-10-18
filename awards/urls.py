@@ -15,9 +15,6 @@ urlpatterns = [
     url(r'^search/', views.search_results, name='search'),
     url(r'^review/(?P<project_id>\d+)$', views.review, name='review'),
     
-    # url(r'^rated_projects/(?P<project_id>\d+)$', views.rated_projects, name='rated_projects'),
-
-
     # url(r'^comment/(?P<pk>\d+)',views.new_comment,name='comment'),
 
 ]

@@ -2,16 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404
 from .models import Project, Profile, Review
-from django.contrib.auth.models import User
-from .forms import EditProfileForm, UploadForm, ReviewForm, UserEditForm,SignupForm
 from django.contrib.auth import login, authenticate
+from .forms import SignupForm, EditProfileForm, UploadForm, ReviewForm, UserEditForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
+from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 # Create your views here.
+
 
 def signup(request):
     if request.method == 'POST':
@@ -25,18 +26,19 @@ def signup(request):
             message = render_to_string('acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                'token':account_activation_token.make_token(user),
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
-                        mail_subject, message, to=[to_email]
+                mail_subject, message, to=[to_email]
             )
             email.send()
             return HttpResponse('Please confirm your email address to complete the registration')
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
+
 
 def activate(request, uidb64, token):
     try:
@@ -50,8 +52,10 @@ def activate(request, uidb64, token):
         login(request, user)
         # return redirect('home')
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+
     else:
-        return HttpResponse('Activation link is invalid!')    
+        return HttpResponse('Activation link is invalid!')
+
 
 @login_required(login_url='/accounts/login/')
 def home(request):
@@ -157,10 +161,8 @@ def review(request, project_id=None):
     else:
         form = ReviewForm()
         # project = Project.objects.get(pk=project_id)
-        project = get_object_or_404( Project ,pk=project_id)
-        try:
-            review = Review.objects.get(project__pk=project_id)
-        except:
-            review = None
+        project = get_object_or_404(Project, pk=project_id)
+        review = Review.objects.filter(project__pk=project_id)
+        print(review)
 
         return render(request, 'review/review.html', {"review": review, "project": project, 'form': form})
