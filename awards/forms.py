@@ -37,4 +37,4 @@ class UploadForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        exclude = ['user', 'project','date']
+        exclude = ['user', 'project']
