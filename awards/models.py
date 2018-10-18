@@ -3,15 +3,6 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-# Create your models here.
-
-
-# class Profile(models.Model):
-#     profilepic = models.ImageField(upload_to='profile/', null=True, blank=True)
-#     bio = models.CharField(max_length=100, blank=True)
-#     user = models.OneToOneField(User)
-
-
 class Project(models.Model):
     title = models.TextField(max_length=100, null=True,
                              blank=True, default="title")

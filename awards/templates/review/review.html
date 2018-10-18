@@ -31,9 +31,18 @@
                     <div class="card">
                         <img src="{{ project.project_image.url  }}" style="width:100%;">
                         <p> there's a problem displaying the image </p>
-                        <div class="div-footer">                            
-                            </p> userbility rating {% if review.usability_rating %} {{review.usability_rating}} {% else %} __ {% endif %}</p>
+                        <div class="div-footer">
+                            <p> userbility rating {% if review.usability_rating %} {{review.usability_rating}}
+                            {% else%} __
+                            {% endif %}</p>
                             <p></p>
+                            <p>Design Rating:
+                                {% if review.content_rating %}
+                                {{review.design_rating}} {% else %} __
+                                {% endif %}
+                            </p>
+                            <p></p>
+
                         </div>
 
                     </div>

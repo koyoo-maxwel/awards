@@ -165,6 +165,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+EMAIL_USE_TLS=True
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='showcasetalanta@gmail.com'
+EMAIL_HOST_PASSWORD='Talanta12345'
+EMAIL_PORT=587
+
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
