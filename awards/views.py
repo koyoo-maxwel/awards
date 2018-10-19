@@ -21,6 +21,7 @@ def signup(request):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
+            profile = Profile(user=user)
             current_site = get_current_site(request)
             mail_subject = 'Activate your blog account.'
             message = render_to_string('acc_active_email.html', {

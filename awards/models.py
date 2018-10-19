@@ -61,7 +61,7 @@ class Review(models.Model):
         Project, null=True, blank=True, on_delete=models.CASCADE, related_name="reviews")
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reviews')
-    
+   
     comment = models.TextField()
     design_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
     usability_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
